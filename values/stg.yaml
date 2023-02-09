@@ -1,0 +1,21 @@
+replicaCount: 2
+maxReplicaCount: 4
+environment: test
+image:
+  name: eahrend/eahrend-cypress:latest
+  pullSecret: gcr
+  pullPolicy: Always
+team: web
+resources:
+  requests:
+    memory: "180Mi"
+    cpu: "100m"
+  limits:
+    memory: "360Mi"
+
+targetCPUUtilization: 60
+targetMemoryUtilization: 60
+
+c_env:
+  CYPRESS_RECORD_KEY: SENSITIVE_DATA
+  CYPRESS_EAHREND_URL: https://example.com
